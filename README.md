@@ -6,20 +6,20 @@ Essa biblioteca foi escrita seguindo a [documentação do próprio Google](https
 ##Exemplo de envio
 
 ```csharp
-    var registrationId = "ID gerado quando o device é registrado no FCM";
-    var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
+var registrationId = "ID gerado quando o device é registrado no FCM";
+var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
 
-    var sender = new Sender(serverKey);
-    var message = new Message
+var sender = new Sender(serverKey);
+var message = new Message
+{
+    RegistrationIds = new List<string> { registrationId }, //Pode-se passar uma lista de devices...
+    Notification = new Notification
     {
-        RegistrationIds = new List<string> { registrationId }, //Pode-se passar uma lista de devices...
-        Notification = new Notification
-        {
-            Title = "FCM.Net :)",
-            Body = $"Olá Mundo!"
-        }
-    };
-    var result = await sender.SendAsync(message);
+        Title = "FCM.Net :)",
+        Body = $"Olá Mundo!"
+    }
+};
+var result = await sender.SendAsync(message);
 ```
 
 [Tabela de referência para maiores detalhes de como montar sua notificação](https://firebase.google.com/docs/cloud-messaging/http-server-ref#table1)
