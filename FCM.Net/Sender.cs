@@ -31,6 +31,20 @@ namespace FCM.Net
         /// <summary>
         /// Send a message Async
         /// </summary>
+        /// <param name="json">Json Message</param>
+        /// <returns>Response Content</returns>
+        public async Task<ResponseContent> SendAsync(string json)
+        {
+            if (string.IsNullOrWhiteSpace(json))
+                throw new ArgumentNullException(nameof(json));
+
+            var requestContent = this.GetRequestContent(json);
+            return await this.SendAsync(requestContent);
+        }
+
+        /// <summary>
+        /// Send a message Async
+        /// </summary>
         /// <param name="message">Message</param>
         /// <returns>Response Content</returns>
         public async Task<ResponseContent> SendAsync(Message message)
@@ -38,18 +52,29 @@ namespace FCM.Net
             if (message == null)
                 throw new ArgumentNullException(nameof(message));
 
+            var requestContent = this.GetRequestContent(message);
+            return await this.SendAsync(requestContent);
+        }
+
+        private async Task<ResponseContent> SendAsync(HttpContent content)
+        {
             using (var client = new HttpClient())
             {
-                var requestContent = this.GetRequestContent(message);
                 client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={this._serverKey}");
 
-                var response = await client.PostAsync(this._endpoint, requestContent);
+                var response = await client.PostAsync(this._endpoint, content);
 
                 var responseContent = await GetResponseContentAsync(response); ;
                 var result = new ResponseContent(response.StatusCode, response.ReasonPhrase, responseContent);
 
                 return result;
             }
+        }
+
+        private HttpContent GetRequestContent(string json)
+        {
+            var content = new StringContent(json, Encoding.UTF8, this._contentType);
+            return content;
         }
 
         private HttpContent GetRequestContent(Message message)

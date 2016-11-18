@@ -7,11 +7,8 @@ namespace FCM.Net.Playground
     {
         static void Main(string[] args)
         {
-            //var registrationId = "ID gerado quando o device é registrado no FCM";
-            //var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
-
-            var registrationId = "d-Z5hg46lmw:APA91bGHhlybPwNR48W6zwVYT8kWvS5Wv9NV6EJvTcdj8jrjW-r-2P4LIq9TjXbAqbv-0MiqYC8rYNIkLeiDqWQYdL0FZiIR-XasLYRPGujocUUNGQFpbFMpjun2NMYdi94C9PH-t6q8";
-            var serverKey = "AIzaSyC8dhbIHM0BEDextBkH1YRGwq2zWSPW2kk";
+            var registrationId = "ID gerado quando o device é registrado no FCM";
+            var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
 
             var sender = new Sender(serverKey);
             var message = new Message
@@ -24,6 +21,10 @@ namespace FCM.Net.Playground
                 }
             };
             var result = sender.SendAsync(message).Result;
+            WriteResult(result);
+
+            var json = "{\"notification\":{\"title\":\"mensagem em json\",\"body\":\"funciona!\"},\"to\":\""+ registrationId + "\"}";
+            result = sender.SendAsync(json).Result;
             WriteResult(result);
 
             Console.Read();
@@ -49,6 +50,7 @@ namespace FCM.Net.Playground
                 Console.WriteLine($"MessageResponse.Results.RegistrationId {item.RegistrationId}");
                 Console.WriteLine($"MessageResponse.Results.Error {item.Error}");
             }
+            Console.WriteLine(new string('-', 20));
         }
     }
 }
