@@ -10,11 +10,12 @@ namespace FCM.Net
     /// <summary>
     /// Send messages from your app server to client apps via Firebase Cloud Messaging
     /// </summary>
-    public class Sender
+    public class Sender : IDisposable
     {
         private readonly string _endpoint = "https://fcm.googleapis.com/fcm/send";
         private readonly string _contentType = "application/json";
-        private readonly string _serverKey;
+
+        private static HttpClient _client = new HttpClient();
 
         /// <summary>
         /// Initialize the Message Sender
@@ -25,8 +26,13 @@ namespace FCM.Net
             if (string.IsNullOrWhiteSpace(serverKey))
                 throw new ArgumentNullException(nameof(serverKey));
 
-            this._serverKey = serverKey;
+            _client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={serverKey}");
         }
+
+        /// <summary>
+        /// Dispose the HttpClient
+        /// </summary>
+        public void Dispose() => _client.Dispose();
 
         /// <summary>
         /// Send a message Async
@@ -58,17 +64,12 @@ namespace FCM.Net
 
         private async Task<ResponseContent> SendAsync(HttpContent content)
         {
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={this._serverKey}");
+            var response = await _client.PostAsync(this._endpoint, content);
 
-                var response = await client.PostAsync(this._endpoint, content);
+            var responseContent = await GetResponseContentAsync(response); ;
+            var result = new ResponseContent(response.StatusCode, response.ReasonPhrase, responseContent);
 
-                var responseContent = await GetResponseContentAsync(response); ;
-                var result = new ResponseContent(response.StatusCode, response.ReasonPhrase, responseContent);
-
-                return result;
-            }
+            return result;
         }
 
         private HttpContent GetRequestContent(string json)
@@ -85,8 +86,7 @@ namespace FCM.Net
                                 NullValueHandling = NullValueHandling.Ignore,
                             });
 
-            var content = new StringContent(json, Encoding.UTF8, this._contentType);
-            return content;
+            return this.GetRequestContent(json);
         }
 
         private async Task<MessageResponse> GetResponseContentAsync(HttpResponseMessage response)

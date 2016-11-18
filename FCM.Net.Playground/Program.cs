@@ -10,45 +10,47 @@ namespace FCM.Net.Playground
             var registrationId = "ID gerado quando o device é registrado no FCM";
             var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
 
-            var sender = new Sender(serverKey);
-            var message = new Message
+            using(var sender = new Sender(serverKey))
             {
-                RegistrationIds = new List<string> { registrationId },
-                Notification = new Notification
+                var message = new Message
                 {
-                    Title = "Test from FCM.Net",
-                    Body = $"Miguel@!{DateTime.Now.ToString()}"
-                }
-            };
-            var result = sender.SendAsync(message).Result;
-            WriteResult(result);
+                    RegistrationIds = new List<string> { registrationId },
+                    Notification = new Notification
+                    {
+                        Title = "Test from FCM.Net",
+                        Body = $"Hello World@!{DateTime.Now.ToString()}"
+                    }
+                };
+                var result = sender.SendAsync(message).Result;
+                WriteResult(result);
 
-            var json = "{\"notification\":{\"title\":\"mensagem em json\",\"body\":\"funciona!\"},\"to\":\""+ registrationId + "\"}";
-            result = sender.SendAsync(json).Result;
-            WriteResult(result);
+                var json = "{\"notification\":{\"title\":\"mensagem em json\",\"body\":\"funciona!\"},\"to\":\"" + registrationId + "\"}";
+                result = sender.SendAsync(json).Result;
+                WriteResult(result);
+            }
 
             Console.Read();
         }
 
         private static void WriteResult(ResponseContent result)
         {
-            Console.WriteLine($"StatusCode {result.StatusCode}");
-            Console.WriteLine($"ReasonPhrase {result.ReasonPhrase}");
+            Console.WriteLine($"StatusCode: {result.StatusCode}");
+            Console.WriteLine($"ReasonPhrase: {result.ReasonPhrase}");
             if (result.MessageResponse == null) return;
 
-            Console.WriteLine($"MessageResponse.Success {result.MessageResponse.Success}");
-            Console.WriteLine($"MessageResponse.Failure {result.MessageResponse.Failure}");
-            Console.WriteLine($"MessageResponse.MulticastId {result.MessageResponse.MulticastId}");
-            Console.WriteLine($"MessageResponse.CanonicalIds {result.MessageResponse.CanonicalIds}");
-            Console.WriteLine($"MessageResponse.InternalError {result.MessageResponse.InternalError}");
-            Console.WriteLine($"MessageResponse.ResponseContent {result.MessageResponse.ResponseContent}");
+            Console.WriteLine($"MessageResponse.Success: {result.MessageResponse.Success}");
+            Console.WriteLine($"MessageResponse.Failure: {result.MessageResponse.Failure}");
+            Console.WriteLine($"MessageResponse.MulticastId: {result.MessageResponse.MulticastId}");
+            Console.WriteLine($"MessageResponse.CanonicalIds: {result.MessageResponse.CanonicalIds}");
+            Console.WriteLine($"MessageResponse.InternalError: {result.MessageResponse.InternalError}");
+            Console.WriteLine($"MessageResponse.ResponseContent: {result.MessageResponse.ResponseContent}");
             if (result.MessageResponse.Results == null) return;
 
             foreach (var item in result.MessageResponse.Results)
             {
-                Console.WriteLine($"MessageResponse.Results.MessageId {item.MessageId}");
-                Console.WriteLine($"MessageResponse.Results.RegistrationId {item.RegistrationId}");
-                Console.WriteLine($"MessageResponse.Results.Error {item.Error}");
+                Console.WriteLine($"MessageResponse.Results.MessageId: {item.MessageId}");
+                Console.WriteLine($"MessageResponse.Results.RegistrationId: {item.RegistrationId}");
+                Console.WriteLine($"MessageResponse.Results.Error: {item.Error}");
             }
             Console.WriteLine(new string('-', 20));
         }
