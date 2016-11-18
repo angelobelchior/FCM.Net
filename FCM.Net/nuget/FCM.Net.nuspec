@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FCM.Net</id>
+    <version>$version$</version>
+    <title>FCM.Net</title>
+    <authors>Angelo Belchior</authors>
+    <owners>Angelo Belchior</owners>
+    <licenseUrl>https://github.com/angelobelchior/FCM.Net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/angelobelchior/FCM.Net</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/angelobelchior/FCM.Net/master/FCM.Net.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Biblioteca para facilitar envio de Push Notification usando o Firebase Cloud Messaging do Google</description>
+    <releaseNotes>Essa biblioteca foi escrita seguindo a documentação do próprio Google (https://firebase.google.com/docs/cloud-messaging/) com o intuito de facilitar o envio de mensagens a partir de um server app / desktop app (Console Application, Asp.Net, Windows Forms, WPF, etc).</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Google Firebird FCM Push Notification</tags>
+  </metadata>
+</package>

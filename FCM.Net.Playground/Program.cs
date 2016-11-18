@@ -7,8 +7,11 @@ namespace FCM.Net.Playground
     {
         static void Main(string[] args)
         {
-            var registrationId = "ID gerado quando o device é registrado no FCM";
-            var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
+            //var registrationId = "ID gerado quando o device é registrado no FCM";
+            //var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
+
+            var registrationId = "d-Z5hg46lmw:APA91bGHhlybPwNR48W6zwVYT8kWvS5Wv9NV6EJvTcdj8jrjW-r-2P4LIq9TjXbAqbv-0MiqYC8rYNIkLeiDqWQYdL0FZiIR-XasLYRPGujocUUNGQFpbFMpjun2NMYdi94C9PH-t6q8";
+            var serverKey = "AIzaSyC8dhbIHM0BEDextBkH1YRGwq2zWSPW2kk";
 
             var sender = new Sender(serverKey);
             var message = new Message
