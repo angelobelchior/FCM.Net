@@ -37,8 +37,27 @@ using(var sender = new Sender(serverKey))
 [Tabela de referência para maiores detalhes de como montar sua notificação](https://firebase.google.com/docs/cloud-messaging/http-server-ref#table1)
 
 ##Instalação
-O FCM.Net está disponível para instalação via [Nuget](https://www.nuget.org/packages/FCM.Net/1.0.0)
-
+O FCM.Net está disponível para instalação via Nuget
+- .Net 4.6 https://www.nuget.org/packages/FCM.Net
 ```nuget
 Install-Package FCM.Net
 ```
+
+- .Net Core https://www.nuget.org/packages/FCM.Net.Core
+```nuget
+Install-Package FCM.Net.Core 
+```
+
+- PCL https://www.nuget.org/packages/FCM.Net.PCL
+```nuget
+Install-Package FCM.Net.PCL
+```
+
+##Testes
+Existem três projetos de teste dentro da Solution. Dois desses projetos são aplicações do tipo console. 
+
+Uma é para o .Net 4.6 e a outra para .Net Core. A terceira aplicação de testes é um App para Android feito em Xamarin. para testa-lo é necessário ter o Xamarin instalado e configurado. 
+
+Caso queira conhecer mais sobre Xamarin criei uma playlist para iniciantes: http://bit.ly/XamarinParaIniciantes. 
+
+Caso você não tenha o Xamarin instalado e queira testar, pode desativa-lo clicando com o botão direito no projeto **FCM.Net.PCL.Playground** e selecionando **Unload Project**.
