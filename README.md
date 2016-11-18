@@ -14,17 +14,24 @@ Essa biblioteca foi escrita seguindo a [documentação do próprio Google](https
 var registrationId = "ID gerado quando o device é registrado no FCM";
 var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
 
-var sender = new Sender(serverKey);
-var message = new Message
+using(var sender = new Sender(serverKey))
 {
-    RegistrationIds = new List<string> { registrationId }, //Pode-se passar uma lista de devices...
-    Notification = new Notification
+    var message = new Message
     {
-        Title = "FCM.Net :)",
-        Body = $"Olá Mundo!"
-    }
-};
-var result = await sender.SendAsync(message);
+        RegistrationIds = new List<string> { registrationId },
+        Notification = new Notification
+        {
+            Title = "Test from FCM.Net",
+            Body = $"Hello World@!{DateTime.Now.ToString()}"
+        }
+    };
+    var result = await sender.SendAsync(message);
+    Console.WriteLine($"Success: {result.MessageResponse.Success}");
+        
+    var json = "{\"notification\":{\"title\":\"mensagem em json\",\"body\":\"funciona!\"},\"to\":\"" + registrationId + "\"}";
+    result = await sender.SendAsync(json);
+    Console.WriteLine($"Success: {result.MessageResponse.Success}");
+}
 ```
 
 [Tabela de referência para maiores detalhes de como montar sua notificação](https://firebase.google.com/docs/cloud-messaging/http-server-ref#table1)
