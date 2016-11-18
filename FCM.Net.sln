@@ -7,7 +7,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCM.Net", "FCM.Net\FCM.Net.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCM.Net.Playground", "FCM.Net.Playground\FCM.Net.Playground.csproj", "{340B7550-DE63-4EAF-BE90-C34EDD6DCF05}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FCM.Net.Core", "FCM.Net.Core\FCM.Net.Core.xproj", "{0D63A80B-46CB-417C-ACD9-31DF94470BC4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FCM.Net.Shared", "FCM.Net.Shared\FCM.Net.Shared.shproj", "{55BB60DA-80C2-4F91-A615-DB28E4A9AE7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCM.Net.PCL", "FCM.Net.PCL\FCM.Net.PCL.csproj", "{98DF4012-C108-4AC2-ABD3-8FE06D30CC7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{D3B74466-B3B3-4B2A-98CF-B553DDDA14F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6C69F7DB-0ABC-41FA-BE71-133AF712CD98}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FCM.Net.Core.Playground", "FCM.Net.Core.Playground\FCM.Net.Core.Playground.xproj", "{5CB70D96-6DBB-4E51-A7D6-3D650338808A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FCM.Net.Shared.Playground", "FCM.Net.Shared.Playground\FCM.Net.Shared.Playground.shproj", "{5B8CCD49-C6D1-40FA-8D50-52D7F5F87EE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCM.Net.PCL.Playground", "FCM.Net.PCL.Playground\FCM.Net.PCL.Playground.csproj", "{A327D95B-EBCD-4A19-A799-82F8C31F3F76}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FCM.Net.Shared\FCM.Net.Shared.projitems*{1bbca0ea-a1d7-4112-87ed-3b23ab96060b}*SharedItemsImports = 4
+		FCM.Net.Shared.Playground\FCM.Net.Shared.Playground.projitems*{340b7550-de63-4eaf-be90-c34edd6dcf05}*SharedItemsImports = 4
+		FCM.Net.Shared\FCM.Net.Shared.projitems*{55bb60da-80c2-4f91-a615-db28e4a9ae7b}*SharedItemsImports = 13
+		FCM.Net.Shared.Playground\FCM.Net.Shared.Playground.projitems*{5b8ccd49-c6d1-40fa-8d50-52d7f5f87ee2}*SharedItemsImports = 13
+		FCM.Net.Shared\FCM.Net.Shared.projitems*{98df4012-c108-4ac2-abd3-8fe06d30cc7a}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -21,8 +44,36 @@ Global
 		{340B7550-DE63-4EAF-BE90-C34EDD6DCF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{340B7550-DE63-4EAF-BE90-C34EDD6DCF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{340B7550-DE63-4EAF-BE90-C34EDD6DCF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D63A80B-46CB-417C-ACD9-31DF94470BC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D63A80B-46CB-417C-ACD9-31DF94470BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D63A80B-46CB-417C-ACD9-31DF94470BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D63A80B-46CB-417C-ACD9-31DF94470BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98DF4012-C108-4AC2-ABD3-8FE06D30CC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98DF4012-C108-4AC2-ABD3-8FE06D30CC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98DF4012-C108-4AC2-ABD3-8FE06D30CC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98DF4012-C108-4AC2-ABD3-8FE06D30CC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CB70D96-6DBB-4E51-A7D6-3D650338808A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CB70D96-6DBB-4E51-A7D6-3D650338808A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CB70D96-6DBB-4E51-A7D6-3D650338808A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CB70D96-6DBB-4E51-A7D6-3D650338808A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A327D95B-EBCD-4A19-A799-82F8C31F3F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A327D95B-EBCD-4A19-A799-82F8C31F3F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A327D95B-EBCD-4A19-A799-82F8C31F3F76}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A327D95B-EBCD-4A19-A799-82F8C31F3F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A327D95B-EBCD-4A19-A799-82F8C31F3F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A327D95B-EBCD-4A19-A799-82F8C31F3F76}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1BBCA0EA-A1D7-4112-87ED-3B23AB96060B} = {D3B74466-B3B3-4B2A-98CF-B553DDDA14F4}
+		{340B7550-DE63-4EAF-BE90-C34EDD6DCF05} = {6C69F7DB-0ABC-41FA-BE71-133AF712CD98}
+		{0D63A80B-46CB-417C-ACD9-31DF94470BC4} = {D3B74466-B3B3-4B2A-98CF-B553DDDA14F4}
+		{55BB60DA-80C2-4F91-A615-DB28E4A9AE7B} = {D3B74466-B3B3-4B2A-98CF-B553DDDA14F4}
+		{98DF4012-C108-4AC2-ABD3-8FE06D30CC7A} = {D3B74466-B3B3-4B2A-98CF-B553DDDA14F4}
+		{5CB70D96-6DBB-4E51-A7D6-3D650338808A} = {6C69F7DB-0ABC-41FA-BE71-133AF712CD98}
+		{5B8CCD49-C6D1-40FA-8D50-52D7F5F87EE2} = {6C69F7DB-0ABC-41FA-BE71-133AF712CD98}
+		{A327D95B-EBCD-4A19-A799-82F8C31F3F76} = {6C69F7DB-0ABC-41FA-BE71-133AF712CD98}
 	EndGlobalSection
 EndGlobal

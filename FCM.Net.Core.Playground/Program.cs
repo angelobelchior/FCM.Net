@@ -10,19 +10,21 @@ namespace FCM.Net.Playground
             var registrationId = "ID gerado quando o device é registrado no FCM";
             var serverKey = "acesse https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
 
-            using(var sender = new Sender(serverKey))
+            string title = "Teste .Net Core";
+            using (var sender = new Sender(serverKey))
             {
                 var message = new Message
                 {
                     RegistrationIds = new List<string> { registrationId },
                     Notification = new Notification
                     {
-                        Title = "Test from FCM.Net",
+                        Title = title,
                         Body = $"Hello World@!{DateTime.Now.ToString()}"
                     }
                 };
                 var result = sender.SendAsync(message).Result;
                 WriteResult(result);
+                Console.WriteLine($"Success: {result.MessageResponse.Success}");
 
                 var json = "{\"notification\":{\"title\":\"mensagem em json\",\"body\":\"funciona!\"},\"to\":\"" + registrationId + "\"}";
                 result = sender.SendAsync(json).Result;

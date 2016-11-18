@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="FCM.Net.PCL.Playground.FCM.Net.PCL.Playground" android:versionCode="1" android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="16" />
+	<application android:label="FCM.Net.PCL.Playground"></application>
+</manifest>
