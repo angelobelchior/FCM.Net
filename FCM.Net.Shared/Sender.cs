@@ -15,7 +15,7 @@ namespace FCM.Net
         private readonly string _endpoint = "https://fcm.googleapis.com/fcm/send";
         private readonly string _contentType = "application/json";
 
-        private static HttpClient _client = new HttpClient();
+        private HttpClient _client = new HttpClient();
 
         /// <summary>
         /// Initialize the Message Sender
