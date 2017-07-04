@@ -8,7 +8,7 @@ O FCM.Net foi criado para facilitar envio de **Push Notification** usando o **Fi
 
 Essa biblioteca foi escrita seguindo a [documentação do próprio Google](https://firebase.google.com/docs/cloud-messaging/) com o intuito de facilitar o envio de mensagens a partir de um server app ou um desktop app (Console Application, Asp.Net, Windows Forms, WPF, etc).
 
-##Exemplo de envio
+## Exemplo de envio
 
 ```csharp
 var registrationId = "ID gerado quando o device é registrado no FCM";
@@ -36,7 +36,7 @@ using(var sender = new Sender(serverKey))
 
 [Tabela de referência para maiores detalhes de como montar sua notificação](https://firebase.google.com/docs/cloud-messaging/http-server-ref#table1)
 
-#Instalação
+## Instalação
 O FCM.Net está disponível para instalação via Nuget
 - .Net 4.6 https://www.nuget.org/packages/FCM.Net
 ```nuget
@@ -58,7 +58,7 @@ Install-Package FCM.Net.Standard
 Install-Package FCM.Net.PCL
 ```
 
-#Testes
+## Testes
 Existem três projetos de teste dentro da Solution. Dois desses projetos são aplicações do tipo console. 
 
 Uma é para o .Net 4.6 e a outra para .Net Core. A terceira aplicação de testes é um App para Android feito em Xamarin. para testa-lo é necessário ter o Xamarin instalado e configurado. 
