@@ -55,13 +55,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Code\Message.cs">
+      <Link>Message.cs</Link>
+    </Compile>
+    <Compile Include="..\Code\Notification.cs">
+      <Link>Notification.cs</Link>
+    </Compile>
+    <Compile Include="..\Code\Priority.cs">
+      <Link>Priority.cs</Link>
+    </Compile>
+    <Compile Include="..\Code\ResponseContent.cs">
+      <Link>ResponseContent.cs</Link>
+    </Compile>
+    <Compile Include="..\Code\Sender.cs">
+      <Link>Sender.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="nuget\FCM.Net.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="..\FCM.Net.Shared\FCM.Net.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

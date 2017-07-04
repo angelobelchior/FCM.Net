@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.0.0.1</VersionPrefix>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>FCM.Net.Core</AssemblyName>
+    <PackageId>FCM.Net.Core</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <Version>1.0.1.0</Version>
+    <Description>Biblioteca para facilitar envio de Push Notification usando o Firebase Cloud Messaging do Google</Description>
+    <PackageProjectUrl>https://github.com/angelobelchior/FCM.Net</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/angelobelchior/FCM.Net/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/angelobelchior/FCM.Net/master/FCM.Net.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/angelobelchior/FCM.Net</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>.net google android fcm Firebase Cloud Messaging</PackageTags>
+    <PackageReleaseNotes>Essa biblioteca foi escrita seguindo a documentação do próprio Google (https://firebase.google.com/docs/cloud-messaging/) com o intuito de facilitar o envio de mensagens a partir de um server app / desktop app (Console Application, Asp.Net, Windows Forms, WPF, etc).</PackageReleaseNotes>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Authors>Angelo Belchior</Authors>
+    <Copyright>Free</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Code\Message.cs" Link="Message.cs" />
+    <Compile Include="..\Code\Notification.cs" Link="Notification.cs" />
+    <Compile Include="..\Code\Priority.cs" Link="Priority.cs" />
+    <Compile Include="..\Code\ResponseContent.cs" Link="ResponseContent.cs" />
+    <Compile Include="..\Code\Sender.cs" Link="Sender.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+</Project>

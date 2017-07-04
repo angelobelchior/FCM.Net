@@ -40,6 +40,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Code\Message.cs">
+      <Link>Message.cs</Link>
+    </Compile>
+    <Compile Include="..\Code\Notification.cs">
+      <Link>Notification.cs</Link>
+    </Compile>
+    <Compile Include="..\Code\Priority.cs">
+      <Link>Priority.cs</Link>
+    </Compile>
+    <Compile Include="..\Code\ResponseContent.cs">
+      <Link>ResponseContent.cs</Link>
+    </Compile>
+    <Compile Include="..\Code\Sender.cs">
+      <Link>Sender.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,7 +71,6 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <Import Project="..\FCM.Net.Shared\FCM.Net.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
