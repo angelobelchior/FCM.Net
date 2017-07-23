@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.1.0</Version>
+    <Version>1.0.2.0</Version>
     <Authors>Angelo Belchior</Authors>
     <Company>Angelo Belchior</Company>
     <Description>Biblioteca para facilitar envio de Push Notification usando o Firebase Cloud Messaging do Google</Description>

@@ -10,7 +10,7 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>1.0.1.0</Version>
+    <Version>1.0.2.0</Version>
     <Description>Biblioteca para facilitar envio de Push Notification usando o Firebase Cloud Messaging do Google</Description>
     <PackageProjectUrl>https://github.com/angelobelchior/FCM.Net</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/angelobelchior/FCM.Net/blob/master/LICENSE</PackageLicenseUrl>

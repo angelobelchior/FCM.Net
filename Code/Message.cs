@@ -46,6 +46,7 @@ namespace FCM.Net
         /// <para/>When a message is sent with high priority, it is sent immediately, and the app can wake a sleeping device and open a network connection to your server.
         /// </summary>
         [JsonProperty("priority")]
+        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         public Priority Priority { get; set; }
 
         /// <summary>
