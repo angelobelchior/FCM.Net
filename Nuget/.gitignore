@@ -1,0 +1,5 @@
+**
+!lib/**
+!Fcm.net.nuspec
+!BuildNugetPackage.bat
+!.gitignore

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>FCM.Net</id>
+	<!-- TODO: Trocar para variavel com $$ -->
+    <version>1.0.1</version>
+    <title>FCM.Net</title>
+    <authors>Angelo Belchior</authors>
+    <owners>Angelo Belchior</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Biblioteca para facilitar envio de Push Notification usando o Firebase Cloud Messaging do Google</description>
+    <copyright>Copyright ©  2017</copyright>
+	<!-- Dependencias -->
+	<dependencies>
+		<group targetFramework="net452">
+		  <dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+		  <dependency id="Microsoft.Net.Http" version="2.2.29" />
+		  <dependency id="Newtonsoft.Json" version="9.0.1" />
+		</group>
+		<group targetFramework="NETStandard1.6">
+			<dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+			<dependency id="Newtonsoft.Json" version="9.0.1" exclude="Build,Analyzers" />
+		</group>
+		<group targetFramework="portable-net4+sl50+win8+wpa81">
+			<dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+			<dependency id="Microsoft.Net.Http" version="2.2.29" />
+			<dependency id="Newtonsoft.Json" version="9.0.1" />
+		</group>
+	</dependencies>
+	
+    <iconUrl>https://raw.githubusercontent.com/angelobelchior/FCM.Net/master/FCM.Net.png</iconUrl>
+    <projectUrl>https://github.com/angelobelchior/FCM.Net</projectUrl>
+    <summary>Essa biblioteca foi escrita seguindo a documentação do próprio Google (https://firebase.google.com/docs/cloud-messaging/) com o intuito de facilitar o envio de mensagens a partir de um server app / desktop app (Console Application, Asp.Net, Windows Forms, WPF, etc).</summary>
+    <tags>.net google android fcm Firebase Cloud Messaging </tags>
+  </metadata>
+	<files>
+		<file src="lib\**" target="lib" />
+	</files>
+</package>
