@@ -54,7 +54,7 @@ There are three test projects within the Solution. Two of these projects are con
 
 If you want to know more about Xamarin I created a playlist for beginners: http://bit.ly/XamarinParaIniciantes. [Pt-Br]
 
-If you do not have Xamarin installed and want to test, you can disable it by right-clicking on the **FCM.Net.PCL.Playground** project and selecting ** Unload Project **.
+If you do not have Xamarin installed and want to test, you can disable it by right-clicking on the **FCM.Net.PCL.Playground** project and selecting **Unload Project**.
 
 ------
 
