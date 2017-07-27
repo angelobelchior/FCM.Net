@@ -43,8 +43,14 @@ using(var sender = new Sender(serverKey))
 [Reference table for more details on how to set up your notification / Tabela de referência para maiores detalhes de como montar sua notificação](https://firebase.google.com/docs/cloud-messaging/http-server-ref#table1)
 
 ## Installation / Instalação
-```nuget
-Install-Package FCM.Net
+Package Manager
+```
+> Install-Package FCM.Net
+```
+
+.NET CLI
+```
+> dotnet add package FCM.Net
 ```
 
 ## Tests / Testes
