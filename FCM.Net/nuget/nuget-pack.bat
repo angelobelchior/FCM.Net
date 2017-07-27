@@ -1,1 +1,0 @@
-nuget\nuget.exe pack FCM.Net.csproj -Prop Configuration=Release
