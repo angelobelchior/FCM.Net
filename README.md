@@ -34,7 +34,7 @@ using(var sender = new Sender(serverKey))
     var result = await sender.SendAsync(message);
     Console.WriteLine($"Success: {result.MessageResponse.Success}");
         
-    var json = "{\"notification\":{\"title\":\"mensagem em json\",\"body\":\"works like a charm!\"},\"to\":\"" + registrationId + "\"}";
+    var json = "{\"notification\":{\"title\":\"json message\",\"body\":\"works like a charm!\"},\"to\":\"" + registrationId + "\"}";
     result = await sender.SendAsync(json);
     Console.WriteLine($"Success: {result.MessageResponse.Success}");
 }
