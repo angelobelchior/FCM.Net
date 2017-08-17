@@ -20,8 +20,8 @@
     <PackageTags>.net google android fcm Firebase Cloud Messaging</PackageTags>
     <PackageReleaseNotes>Essa biblioteca foi escrita seguindo a documentação do próprio Google (https://firebase.google.com/docs/cloud-messaging/) com o intuito de facilitar o envio de mensagens a partir de um server app / desktop app (Console Application, Asp.Net, Windows Forms, WPF, etc).</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
     <Authors>Angelo Belchior</Authors>
     <Copyright>Free</Copyright>
   </PropertyGroup>
