@@ -10,7 +10,7 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>1.0.2.0</Version>
+    <Version>1.0.5.0</Version>
     <Description>Biblioteca para facilitar envio de Push Notification usando o Firebase Cloud Messaging do Google</Description>
     <PackageProjectUrl>https://github.com/angelobelchior/FCM.Net</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/angelobelchior/FCM.Net/blob/master/LICENSE</PackageLicenseUrl>
@@ -20,8 +20,8 @@
     <PackageTags>.net google android fcm Firebase Cloud Messaging</PackageTags>
     <PackageReleaseNotes>Essa biblioteca foi escrita seguindo a documentação do próprio Google (https://firebase.google.com/docs/cloud-messaging/) com o intuito de facilitar o envio de mensagens a partir de um server app / desktop app (Console Application, Asp.Net, Windows Forms, WPF, etc).</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.4.0</AssemblyVersion>
-    <FileVersion>1.0.4.0</FileVersion>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <FileVersion>1.0.5.0</FileVersion>
     <Authors>Angelo Belchior</Authors>
     <Copyright>Free</Copyright>
   </PropertyGroup>

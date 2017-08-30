@@ -29,6 +29,20 @@ namespace FCM.Net
             _client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", $"key={serverKey}");
         }
 
+
+        /// <summary>
+        /// Initialize the Message Sender
+        /// </summary>
+        /// <param name="serverKey">Server Key. To access this information, go to https://console.firebase.google.com/project/<<MY_PROJECT>>/settings/cloudmessaging </param>
+        /// <param name="senderId">Sender Id. To access this information, go to https://console.firebase.google.com/project/<<MY_PROJECT>>/settings/cloudmessaging </param>
+        public Sender(string serverKey, string senderId) : this(serverKey)
+        {
+            if (string.IsNullOrWhiteSpace(senderId))
+                throw new ArgumentNullException(nameof(senderId));
+
+            _client.DefaultRequestHeaders.TryAddWithoutValidation("Sender", $"id={senderId}");
+        }
+
         /// <summary>
         /// Dispose the HttpClient
         /// </summary>
