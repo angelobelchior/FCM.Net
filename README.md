@@ -18,9 +18,9 @@ Essa biblioteca foi escrita seguindo a [documentação do próprio Google](https
 
 ```csharp
 var registrationId = "ID generated when device is registered in FCM / ID gerado quando o device é registrado no FCM";
-var serverKey = "You can get the server Key by accessing the url/ Você pode obter a chave do servidor acessando a url https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
 
-using(var sender = new Sender(serverKey))
+//You can get the server Key by accessing the url/ Você pode obter a chave do servidor acessando a url //https://console.firebase.google.com/project/MY_PROJECT/settings/cloudmessaging";
+using(var sender = new Sender("serverKey"))
 {
     var message = new Message
     {
