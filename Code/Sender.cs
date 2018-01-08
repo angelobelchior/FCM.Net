@@ -10,7 +10,7 @@ namespace FCM.Net
     /// <summary>
     /// Send messages from your app server to client apps via Firebase Cloud Messaging
     /// </summary>
-    public class Sender : IDisposable
+    public class Sender : IDisposable, ISender
     {
         private readonly string _endpoint = "https://fcm.googleapis.com/fcm/send";
         private readonly string _contentType = "application/json";
@@ -118,5 +118,22 @@ namespace FCM.Net
                 return new MessageResponse { InternalError = ex.Message, ResponseContent = json };
             }
         }
+    }
+
+    public interface ISender
+    {
+        /// <summary>
+        /// Send a message Async
+        /// </summary>
+        /// <param name="json">Json Message</param>
+        /// <returns>Response Content</returns>
+        Task<ResponseContent> SendAsync(string json);
+
+        /// <summary>
+        /// Send a message Async
+        /// </summary>
+        /// <param name="message">Message</param>
+        /// <returns>Response Content</returns>
+        Task<ResponseContent> SendAsync(Message message);
     }
 }
