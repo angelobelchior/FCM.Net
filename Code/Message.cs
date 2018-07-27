@@ -58,7 +58,7 @@ namespace FCM.Net
         /// <summary>
         /// This parameter specifies how long (in seconds) the message should be kept in FCM storage if the device is offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks. 
         /// </summary>
-        [JsonProperty("time_to_live")]
+        [JsonProperty("ttl")]
         public int? TimeToLive { get; set; }
 
         /// <summary>
