@@ -11,7 +11,7 @@ namespace FCM.Net
         /// <summary>
         /// This parameter specifies the recipient of a message.
         /// <para/>The value must be a registration token, notification key, or topic. Do not set this field when sending to multiple topics. 
-        ///<para/>See <seealso cref="FCM.Net.Message.Condition"/>
+        /// <para/>See <seealso cref="FCM.Net.Message.Condition"/>
         /// </summary>
         [JsonProperty("to")]
         public string To { get; set; }
@@ -32,10 +32,8 @@ namespace FCM.Net
         public string Condition { get; set; }
 
         /// <summary>
-        /// Sets the priority of the message. Valid values are "normal" and "high." On iOS, these correspond to APNs priorities 5 and 10.
-        /// <para/>By default, messages are sent with normal priority.Normal priority optimizes the client app's battery consumption and should be used unless immediate delivery is required. 
-        /// <para/>For messages with normal priority, the app may receive the message with unspecified delay.
-        /// <para/>When a message is sent with high priority, it is sent immediately, and the app can wake a sleeping device and open a network connection to your server.
+        /// This parameter identifies a group of messages (e.g., with collapse_key: "Updates Available") that can be collapsed, so that only the last message gets sent when delivery can be resumed. 
+        /// <para/>This is intended to avoid sending too many of the same messages when the device comes back online or becomes active.
         /// </summary>
         [JsonProperty("collapse_key")]
         public string CollapseKey { get; set; }
