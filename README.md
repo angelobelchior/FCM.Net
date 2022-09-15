@@ -72,3 +72,5 @@ Uma é para o .Net 4.6 e a outra para .Net Core. A terceira aplicação de teste
 Caso queira conhecer mais sobre Xamarin criei uma playlist para iniciantes: http://bit.ly/XamarinParaIniciantes. 
 
 Caso você não tenha o Xamarin instalado e queira testar, pode desativa-lo clicando com o botão direito no projeto **FCM.Net.PCL.Playground** e selecionando **Unload Project**.
+
+Docs: [https://firebase.google.com/docs/cloud-messaging/http-server-ref](https://firebase.google.com/docs/cloud-messaging/http-server-ref)
